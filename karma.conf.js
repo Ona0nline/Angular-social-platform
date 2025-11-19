@@ -13,10 +13,10 @@ module.exports = function (config) {
     ],
     client: {
       jasmine: {},
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false
     },
     jasmineHtmlReporter: {
-      suppressAll: true // removes duplicated traces
+      suppressAll: true
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage'),
@@ -31,7 +31,10 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Firefox'],  // ← IMPORTANT: use Firefox instead of Chrome
+
+    // ⭐ ADD THIS ⭐
+    browsers: ['Firefox'],
+
     singleRun: false,
     restartOnFileChange: true
   });
