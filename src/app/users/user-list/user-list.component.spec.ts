@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserListComponent } from './user-list.component';
 import { UserService } from '../user.service';
+import { of } from 'rxjs';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -30,4 +31,10 @@ describe('UserListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should retreive users from the user service onint', () => {
+    // Starts life cycle hook
+    fixture.detectChanges();
+    expect(userServiceSpy).toHaveBeenCalled();
+  })
 });
